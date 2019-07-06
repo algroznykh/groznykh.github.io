@@ -55,14 +55,16 @@
 	      <img id="2" src="assets/2-min.jpg">
 	      <img id="7" src="assets/7-min.jpg">
 	      <img id="3" src="assets/3-min.jpg">
+	      <audio id="sound" src="assets/sound.mp3"></audio>
       </a-assets>
       
     <a-camera><a-cursor visible="true"></a-cursor></a-camera>
   
-      
+    <a-sky color="black" scale="0 0 0" visible="false" sound="src: #sound; autoplay: true; loop: true"> </a-sky>
+
       <a-entity id="loc_1">
         <a-sky material="src: #1"></a-sky>
-<a-sphere toid="loc_2" scale="6 6 6" position="-1 -6 -64" material="src: #2" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear" handle-events></a-sphere>
+<a-sphere  toid="loc_2" scale="6 6 6" position="-1 -6 -64" material="src: #2" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear" handle-events></a-sphere>
         
 	<a-sphere 
 		toid="loc_3" 
