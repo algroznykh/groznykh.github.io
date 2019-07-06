@@ -9,18 +9,30 @@
       AFRAME.registerComponent('handle-events', {
         update: function () {
           var el = this.el;  // <a-sphere>
-	  console.log(el.parentEl.id);
-
+          var flag = false;
 	      
 		el.addEventListener('mouseenter', () => {
-		if (this.el.parentEl.getAttribute('visible')) {
+			flag = true;
+		if (el.parentEl.getAttribute('visible')) {
 			el.object3D.scale.x = el.object3D.scale.x * 2;
 			el.object3D.scale.y = el.object3D.scale.y * 2;
 			el.object3D.scale.z = el.object3D.scale.z * 2;
-			setTimeout(changeScene, 400);
+			setTimeout(changeScene, 800);
+		}
+	      });
+		el.addEventListener('mouseleave', () => {
+	        flag = false;
+		if (el.parentEl.getAttribute('visible')) {
+			el.object3D.scale.x = el.object3D.scale.x * 0.5;
+			el.object3D.scale.y = el.object3D.scale.y * 0.5;
+			el.object3D.scale.z = el.object3D.scale.z * 0.5;
 		}
 	      });
 	      function changeScene() {
+		  console.log("flag");
+		  console.log(flag);
+		  if (flag) {
+			flag = false:
 			el.object3D.scale.x = el.object3D.scale.x * 0.5;
 			el.object3D.scale.y = el.object3D.scale.y * 0.5;
 			el.object3D.scale.z = el.object3D.scale.z * 0.5;
@@ -37,7 +49,9 @@
 	    toel.setAttribute('visible', 'true');
             
             document.getElementById(el.parentEl.id).setAttribute('visible', 'false');
-		      }
+		  };
+		     }
+		    
 		}
       });
     </script>
