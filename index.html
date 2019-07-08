@@ -3,19 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>lucid atlas! • A-Frame</title>
-    <meta name="description" content="Hello, WebVR! • A-Frame">
     <!-- texture from https://colab.research.google.com/github/tensorflow/lucid/blob/master/notebooks/activation-atlas/activation-atlas-simple.ipynb -->
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene background="color: #B00B55">
+    <a-scene background="color: #B00B55" loading-screen="dotsColor: orange; backgroundColor: black">
       <a-assets>
       <a-asset-item id="atlas" src="assets/atlas_black.png"></a-asset-item>
       </a-assets>
       <a-sphere scale="9 9 9" position="0 1.6 0" src="https://cdn.glitch.com/1a020bce-2ab6-4697-8f46-4fa7158a8488%2Fatlas4b_black.png?1555213427327" side="double"
-                animation="property: rotation; to: 0 360 0; dur:10000; loop: true" >
+                animation="property: rotation; to: 0 360 0; dur:10000; loop: true; easing: linear" >
         
         </a-sphere>
+
+      <a-sphere scale="2 2 2" position="0 -4 0" src="https://cdn.glitch.com/1a020bce-2ab6-4697-8f46-4fa7158a8488%2Fatlas4b_black.png?1555213427327" side="double"
+                animation="property: rotation; to: 0 360 0; dur:5000; loop: true; easing: linear" >
+        
+        </a-sphere>
+
       
       <a-light type="ambient" color="#ff8e3c" intensity="1.5"></a-light>
       
